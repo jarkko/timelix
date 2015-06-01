@@ -1,0 +1,32 @@
+<h2>Listing results</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>RunnerId</th>
+      <th>Result</th>
+      <th>TimerId</th>
+      <th>Bib Number</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for result <- @results do %>
+    <tr>
+      <td><%= result.runner_id %></td>
+      <td><%= result.result %></td>
+      <td><%= result.timer_id %></td>
+      <td><%= result.bib_number %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: result_path(@conn, :show, result), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: result_path(@conn, :edit, result), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: result_path(@conn, :delete, result), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New result", to: result_path(@conn, :new) %>

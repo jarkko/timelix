@@ -1,0 +1,32 @@
+<h2>Listing runners</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>BibNumber</th>
+      <th>CategoryId</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for runner <- @runners do %>
+    <tr>
+      <td><%= runner.first_name %></td>
+      <td><%= runner.last_name %></td>
+      <td><%= runner.bib_number %></td>
+      <td><%= runner.category_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: runner_path(@conn, :show, runner), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: runner_path(@conn, :edit, runner), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: runner_path(@conn, :delete, runner), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New runner", to: runner_path(@conn, :new) %>

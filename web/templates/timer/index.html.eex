@@ -1,0 +1,26 @@
+<h2>Listing timers</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>StartTime</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for timer <- @timers do %>
+    <tr>
+      <td><%= timer.start_time %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: timer_path(@conn, :show, timer), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: timer_path(@conn, :edit, timer), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: timer_path(@conn, :delete, timer), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New timer", to: timer_path(@conn, :new) %>

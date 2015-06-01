@@ -1,0 +1,27 @@
+<h2>Show runner</h2>
+
+<ul>
+
+  <li>
+    <strong>FirstName:</strong>
+    <%= @runner.first_name %>
+  </li>
+
+  <li>
+    <strong>LastName:</strong>
+    <%= @runner.last_name %>
+  </li>
+
+  <li>
+    <strong>BibNumber:</strong>
+    <%= @runner.bib_number %>
+  </li>
+
+  <li>
+    <strong>CategoryId:</strong>
+    <%= @runner.category_id %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: runner_path(@conn, :index) %>

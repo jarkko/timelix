@@ -1,0 +1,27 @@
+<h2>Show result</h2>
+
+<ul>
+
+  <li>
+    <strong>RunnerId:</strong>
+    <%= @result.runner_id %>
+  </li>
+
+  <li>
+    <strong>Result:</strong>
+    <%= @result.result %>
+  </li>
+
+  <li>
+    <strong>TimerId:</strong>
+    <%= @result.timer_id %>
+  </li>
+
+  <li>
+    <strong>Bib Number:</strong>
+    <%= @result.bib_number %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: result_path(@conn, :index) %>

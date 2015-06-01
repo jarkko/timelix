@@ -1,0 +1,6 @@
+<h2>Edit runner</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: runner_path(@conn, :update, @runner) %>
+
+<%= link "Back", to: runner_path(@conn, :index) %>

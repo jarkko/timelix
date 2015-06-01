@@ -1,0 +1,36 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if f.errors != [] do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label>Runner Id</label>
+    <%= number_input f, :runner_id, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Result</label>
+    <%= number_input f, :result, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Timer Id</label>
+    <%= number_input f, :timer_id, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Bib Number</label>
+    <%= number_input f, :bib_number, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

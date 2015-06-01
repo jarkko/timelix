@@ -1,0 +1,12 @@
+<h2>Show timer</h2>
+
+<ul>
+
+  <li>
+    <strong>StartTime:</strong>
+    <%= @timer.start_time %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: timer_path(@conn, :index) %>
